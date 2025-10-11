@@ -87,17 +87,17 @@ export default function Terminal() {
   );
 
   return (
-    <main className="h-dvh w-full grid place-items-center bg-black text-green-200">
-      <div className="crt crt-flicker w-[min(95vw,640px)] border border-green-900/40 p-6 rounded-xl bg-[#00140F]/80 shadow-[0_0_60px_rgba(0,255,170,.12)_inset] font-mono">
-        <div className="text-5xl md:text-6xl mb-1">CICLO 9</div>
-        <div className="text-2xl mb-6 opacity-90">{subtitle}</div>
-        <div className="text-right text-xl mb-8 opacity-90 leading-tight">
-          EL USUARIO
-          <br />SOY YO
-        </div>
-        {rendered}
-        <div className="mt-8 text-xs opacity-70">↑/↓ navegar — Enter confirmar</div>
+  <main className="w-full">
+    <div className="crt crt-flicker w-[min(95vw,800px)] border border-green-900/40 p-8 md:p-10 rounded-xl bg-[#00140F]/80 shadow-[0_0_60px_rgba(0,255,170,.12)_inset] font-mono">
+      <div className="text-5xl md:text-6xl mb-2">CICLO 9</div>
+      <div className="text-2xl mb-8 opacity-90">{subtitle}</div>
+      <div className="text-right text-xl mb-10 opacity-90 leading-tight">
+        EL USUARIO<br/>SOY YO
       </div>
-    </main>
-  );
+      {rendered}
+      <div className="mt-10 text-xs opacity-70">↑/↓ navegar — Enter confirmar</div>
+    </div>
+  </main>
+);
+
 }

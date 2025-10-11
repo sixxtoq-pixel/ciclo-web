@@ -2,13 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Efecto CRT */
-:root { --crt-glow: 0 0 8px rgba(0,255,170,.35); }
-.crt { position: relative; text-shadow: var(--crt-glow); }
-.crt::after{
-  content:""; position:absolute; inset:0;
-  background:repeating-linear-gradient(to bottom, rgba(0,0,0,.15) 0 2px, transparent 2px 4px);
-  pointer-events:none; mix-blend-mode:multiply;
+/* --- RESET / LAYOUT BASE --- */
+* { box-sizing: border-box; }
+html, body, :root { height: 100%; }
+body { margin: 0; background: #000; }
+
+/* --- CRT EFFECT (opcional) --- */
+.crt {
+  position: relative;
+  overflow: hidden;
+  background: #00140f;
 }
-.crt-flicker{ animation:flicker 2.5s steps(60) infinite; }
-@keyframes flicker { 0%,100%{opacity:1} 50%{opacity:.97} }
+.crt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,255,170,0.08) 0px,
+    rgba(0,255,170,0.08) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+.crt-flicker { animation: flicker 6s infinite; }
+@keyframes flicker {
+  0%,100% { opacity: 1; }
+  50%     { opacity: 0.98; }
+}
