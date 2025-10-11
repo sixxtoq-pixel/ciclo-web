@@ -2,33 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* --- RESET / LAYOUT BASE --- */
+/* RESET */
 * { box-sizing: border-box; }
 html, body, :root { height: 100%; }
 body { margin: 0; background: #000; }
 
-/* --- CRT EFFECT (opcional) --- */
-.crt {
-  position: relative;
-  overflow: hidden;
-  background: #00140f;
-}
+/* CRT opcional */
+.crt { position: relative; overflow: hidden; background: #00140f; }
 .crt::before {
   content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.18;
+  position: absolute; inset: 0; pointer-events: none; opacity: .18;
   background: repeating-linear-gradient(
     to bottom,
-    rgba(0,255,170,0.08) 0px,
-    rgba(0,255,170,0.08) 1px,
+    rgba(0,255,170,.08) 0px,
+    rgba(0,255,170,.08) 1px,
     transparent 2px,
     transparent 4px
   );
 }
 .crt-flicker { animation: flicker 6s infinite; }
-@keyframes flicker {
-  0%,100% { opacity: 1; }
-  50%     { opacity: 0.98; }
-}
+@keyframes flicker { 0%,100%{opacity:1} 50%{opacity:.98} }
